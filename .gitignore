@@ -4,3 +4,12 @@ module*/ex*/obj/
 module00/ex00/megaphone
 module00/ex01/phonebook
 module00/ex02/tests
+
+module01/ex00/zombie
+module01/ex01/horde
+module01/ex02/brain
+module01/ex03/violence
+module01/ex04/sed
+module01/ex04/*.replace
+module01/ex05/harl
+module01/ex06/harlFilter

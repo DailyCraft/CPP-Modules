@@ -6,7 +6,7 @@
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:49:31 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/01/27 16:37:46 by dvan-hum         ###   ########.fr       */
+/*   Updated: 2025/01/28 07:57:20 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,12 @@ int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
 Account::Account() {
-	
+	_accountIndex = _nbAccounts++;
+	_amount = 0;
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex
+		<< ";amount:" << _amount
+		<< ";created" << std::endl;
 }
 
 Account::Account(int initial_deposit) {

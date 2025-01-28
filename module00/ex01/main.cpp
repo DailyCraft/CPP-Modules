@@ -6,7 +6,7 @@
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:57:09 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/01/27 15:54:44 by dvan-hum         ###   ########.fr       */
+/*   Updated: 2025/01/28 10:29:42 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ int main() {
 
 	std::string command;
 	while (getline(command, "ADD | SEARCH | EXIT $> ")) {
-		if (command.compare("ADD") == 0)
+		if (command == "ADD")
 			book.add();
-		else if (command.compare("SEARCH") == 0)
+		else if (command == "SEARCH")
 			search(book);
-		else if (command.compare("EXIT") == 0)
+		else if (command == "EXIT")
 			return (0);
 		else
 			std::cout << "Unexpected command: " << command << std::endl;

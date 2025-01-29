@@ -6,7 +6,7 @@
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:54:32 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/01/29 11:39:38 by dvan-hum         ###   ########.fr       */
+/*   Updated: 2025/01/29 13:25:53 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,23 @@ PhoneBook::PhoneBook(): last(0) {
 		contacts[i] = Contact();	
 }
 
+int PhoneBook::getContactsAmount() const {
+	return std::min(last, 8u);
+}
+
 void PhoneBook::add() {
 	Contact &contact = contacts[(last++) % 8];
-	getline(contact.firstName, "First name: ");
-	getline(contact.lastName, "Last name: ");
-	getline(contact.nickname, "Nickname: ");
-	getline(contact.phoneNumber, "Phone number: ");
-	getline(contact.darkestSecret, "Darkest secret: ");
+	std::string input;
+	getline(input, "First name: ");
+	contact.setFirstName(input);
+	getline(input, "Last name: ");
+	contact.setLastName(input);
+	getline(input, "Nickname: ");
+	contact.setNickname(input);
+	getline(input, "Phone number: ");
+	contact.setPhoneNumber(input);
+	getline(input, "Darkest secret: ");
+	contact.setDarkestSecret(input);
 }
 
 static std::string truncate(const std::string &str) {
@@ -44,13 +54,13 @@ bool PhoneBook::displayContacts() const {
 		<< std::setw(10)  << "Last Name" << " | "
 		<< std::setw(10)  << "Nickname" << std::endl;
 	std::cout << "-----------|------------|------------|-----------" << std::endl;
-	for (unsigned int i = 0; i < std::min(last, 8u); i++) {
+	for (int i = 0; i < getContactsAmount(); i++) {
 		const Contact &contact = contacts[i];
 		std::cout << std::left
 			<< std::setw(10)  << i << " | "
-			<< std::setw(10)  << truncate(contact.firstName) << " | "
-			<< std::setw(10)  << truncate(contact.lastName) << " | "
-			<< std::setw(10)  << truncate(contact.nickname) << std::endl;
+			<< std::setw(10)  << truncate(contact.getFirstName()) << " | "
+			<< std::setw(10)  << truncate(contact.getLastName()) << " | "
+			<< std::setw(10)  << truncate(contact.getNickname()) << std::endl;
 	}
 
 	return true;
@@ -58,9 +68,9 @@ bool PhoneBook::displayContacts() const {
 
 void PhoneBook::displayContact(int index) const {
 	const Contact &contact = contacts[index];
-	std::cout << "First Name: " << contact.firstName << std::endl
-		<< "Last Name: " << contact.lastName << std::endl
-		<< "Nickname: " << contact.nickname << std::endl
-		<< "Phone number: " << contact.phoneNumber << std::endl
-		<< "Darkest secret: " << contact.darkestSecret << std::endl;
+	std::cout << "First Name: " << contact.getFirstName() << std::endl
+		<< "Last Name: " << contact.getLastName() << std::endl
+		<< "Nickname: " << contact.getNickname() << std::endl
+		<< "Phone number: " << contact.getPhoneNumber() << std::endl
+		<< "Darkest secret: " << contact.getDarkestSecret() << std::endl;
 }

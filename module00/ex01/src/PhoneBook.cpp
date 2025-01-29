@@ -6,7 +6,7 @@
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:54:32 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/01/27 15:54:44 by dvan-hum         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:39:38 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ PhoneBook::PhoneBook(): last(0) {
 }
 
 void PhoneBook::add() {
-	Contact &contact = contacts[last++];
+	Contact &contact = contacts[(last++) % 8];
 	getline(contact.firstName, "First name: ");
 	getline(contact.lastName, "Last name: ");
 	getline(contact.nickname, "Nickname: ");
@@ -60,7 +60,7 @@ void PhoneBook::displayContact(int index) const {
 	const Contact &contact = contacts[index];
 	std::cout << "First Name: " << contact.firstName << std::endl
 		<< "Last Name: " << contact.lastName << std::endl
-		<< "Nickname: " << contact.lastName << std::endl
+		<< "Nickname: " << contact.nickname << std::endl
 		<< "Phone number: " << contact.phoneNumber << std::endl
 		<< "Darkest secret: " << contact.darkestSecret << std::endl;
 }

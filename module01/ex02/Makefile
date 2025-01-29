@@ -5,14 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/01/28 08:02:05 by dvan-hum          #+#    #+#              #
-#    Updated: 2025/01/28 08:55:56 by dvan-hum         ###   ########.fr        #
+#    Created: 2025/01/27 13:33:55 by dvan-hum          #+#    #+#              #
+#    Updated: 2025/01/29 12:38:57 by dvan-hum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = brain
 
-CC = c++ -Wall -Wextra -Werror -std=c++98 -O3
+CXX = c++
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -O3
 
 SRC = main.cpp
 OBJ = $(SRC:%.cpp=obj/%.o)
@@ -25,12 +26,12 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	echo "\n\t\e[1;32mBuilding\e[0m \e[36m$(NAME)\e[0m\n"
-	$(CC) -o $(NAME) $(OBJ)
+	$(CXX) $(CPPFLAGS) -o $(NAME) $(OBJ)
 
-obj/%.o: %.cpp
+obj/%.o: src/%.cpp
 	echo "$(NAME) \e[90m➤\e[0m \e[32mCompiling\e[0m \e[36m$<\e[0m"
 	mkdir -p $(dir $@)
-	$(CC) -c $< -o $@
+	$(CXX) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	echo "$(NAME) \e[90m➤\e[0m\t\e[1;31mCleaning object files\e[0m"

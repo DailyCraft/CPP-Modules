@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/28 08:59:32 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/01/31 08:12:01 by dvan-hum         ###   ########.fr       */
+/*   Created: 2025/01/29 10:03:29 by dvan-hum          #+#    #+#             */
+/*   Updated: 2025/01/29 13:43:37 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <string>
-
-class Weapon {
+class Fixed {
 private:
-	std::string type;
-
+	int raw;
+	static const int bits = 8;
+	
 public:
-	Weapon(std::string type);
-	const std::string &getType();
-	void setType(std::string type);
+	Fixed();
+	Fixed(const Fixed &fixed);
+	~Fixed();
+
+	int getRawBits() const;
+	void setRawBits(const int raw);
+
+	Fixed &operator=(const Fixed &fixed);
 };

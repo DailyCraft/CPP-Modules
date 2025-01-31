@@ -6,12 +6,30 @@
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 09:28:54 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/01/28 10:01:51 by dvan-hum         ###   ########.fr       */
+/*   Updated: 2025/01/31 08:19:34 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
+
+static void replace(std::ifstream &input, std::ofstream &output, char *toReplace, char *replace) {
+	std::string line;
+	
+	while (getline(input, line)) {
+		while (true) {
+			size_t index = line.find(toReplace);
+
+			if (index != std::string::npos) {
+				output << line.substr(0, index) << replace;
+				line = line.substr(index + std::string(toReplace).length());
+			} else {
+				output << line << std::endl;
+				break;
+			}
+		}
+	}
+}
 
 int main(int argc, char **argv) {
 	if (argc != 4) {
@@ -33,18 +51,5 @@ int main(int argc, char **argv) {
 		return 1;
 	}
 
-	std::string line;
-	while (getline(input, line)) {
-		while (true) {
-			size_t index = line.find(argv[2]);
-
-			if (index != std::string::npos) {
-				output << line.substr(0, index) << argv[3];
-				line = line.substr(index + std::string(argv[2]).length());
-			} else {
-				output << line << std::endl;
-				break;
-			}
-		}
-	}
+	replace(input, output, argv[2], argv[3]);
 }

@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/28 08:59:32 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/01/31 08:12:01 by dvan-hum         ###   ########.fr       */
+/*   Created: 2025/01/29 16:02:28 by dvan-hum          #+#    #+#             */
+/*   Updated: 2025/01/31 11:45:02 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <string>
+#include "Fixed.hpp"
 
-class Weapon {
+class Point {
 private:
-	std::string type;
+	const Fixed x, y;
 
 public:
-	Weapon(std::string type);
-	const std::string &getType();
-	void setType(std::string type);
+	Point();
+	Point(const Point &point);
+	Point(float x, float y);
+	~Point();
+
+	Fixed getX() const;
+	Fixed getY() const;
+
+	Point &operator=(const Point &point);
 };
+
+bool bsp(const Point a, const Point b, const Point c, const Point point);

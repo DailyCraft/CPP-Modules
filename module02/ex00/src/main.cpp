@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/28 08:59:32 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/01/31 08:12:01 by dvan-hum         ###   ########.fr       */
+/*   Created: 2025/01/29 10:12:12 by dvan-hum          #+#    #+#             */
+/*   Updated: 2025/01/29 10:22:22 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include <iostream>
+#include "Fixed.hpp"
 
-#include <string>
-
-class Weapon {
-private:
-	std::string type;
-
-public:
-	Weapon(std::string type);
-	const std::string &getType();
-	void setType(std::string type);
-};
+int main() {
+	Fixed a;
+	Fixed b(a);
+	Fixed c;
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+}

@@ -6,7 +6,7 @@
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:57:09 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/01/29 13:30:48 by dvan-hum         ###   ########.fr       */
+/*   Updated: 2025/01/31 07:41:26 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void search(PhoneBook &book) {
 		getline(input, "Select index: ");
 		std::stringstream ss(input);
 		ss >> index;
-		if (ss.fail() || index >= book.getContactsAmount()) {
+		if (ss.fail() || index < 0 || index >= book.getContactsAmount()) {
 			std::cout << "Invalid index!" << std::endl;
 			index = -1;
 		}

@@ -1,0 +1,49 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/05 09:14:55 by dvan-hum          #+#    #+#             */
+/*   Updated: 2025/02/05 12:47:15 by dvan-hum         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "MateriaSource.hpp"
+
+MateriaSource::MateriaSource() {
+	for (int i = 0; i < 4; i++)
+		memory[i] = NULL;	
+}
+
+MateriaSource::MateriaSource(const MateriaSource &source) {
+	for (int i = 0; i < 4; i++) {
+		if (source.memory[i] != NULL)
+			memory[i] = source.memory[i]->clone();
+		else
+			memory[i] = NULL;
+	}
+}
+
+MateriaSource::~MateriaSource() {
+	for (int i = 0; i < 4 && memory[i] != NULL; i++)
+		delete memory[i];
+}
+
+void MateriaSource::learnMateria(AMateria *materia) {
+	for (int i = 0; i < 4; i++) {
+		if (memory[i] == NULL) {
+			memory[i] = materia;
+			break;
+		}
+	}
+}
+
+AMateria *MateriaSource::createMateria(const std::string &type) {
+	for (int i = 0; i < 4 && memory[i] != NULL; i++)
+		if (memory[i]->getType() == type)
+			return memory[i]->clone();
+
+	return NULL;
+}

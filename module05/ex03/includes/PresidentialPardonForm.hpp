@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/30 19:22:52 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/02/07 07:48:31 by dvan-hum         ###   ########.fr       */
+/*   Created: 2025/02/07 09:45:02 by dvan-hum          #+#    #+#             */
+/*   Updated: 2025/02/07 10:26:25 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "ClapTrap.hpp"
+#include "AForm.hpp"
 
-class FragTrap: public ClapTrap {
+class PresidentialPardonForm: public AForm {
+private:
+	const std::string target;
+
 public:
-	FragTrap();
-	FragTrap(const FragTrap &FragTrap);
-	FragTrap(std::string name);
-	~FragTrap();
+	PresidentialPardonForm();
+	PresidentialPardonForm(const std::string &target);
+	PresidentialPardonForm(const PresidentialPardonForm &form);
+	~PresidentialPardonForm();
 
-	FragTrap &operator=(const FragTrap &FragTrap);
+	void execute(const Bureaucrat &executor) const;
 
-	void highFivesGuys();
+	using AForm::operator=;
 };

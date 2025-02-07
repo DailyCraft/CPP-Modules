@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/30 19:22:52 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/02/07 07:48:31 by dvan-hum         ###   ########.fr       */
+/*   Created: 2025/02/07 10:46:36 by dvan-hum          #+#    #+#             */
+/*   Updated: 2025/02/07 10:48:42 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "ClapTrap.hpp"
+#include "AForm.hpp"
 
-class FragTrap: public ClapTrap {
+class Intern {
 public:
-	FragTrap();
-	FragTrap(const FragTrap &FragTrap);
-	FragTrap(std::string name);
-	~FragTrap();
-
-	FragTrap &operator=(const FragTrap &FragTrap);
-
-	void highFivesGuys();
+	AForm *makeForm(const std::string &name, const std::string &target);
 };

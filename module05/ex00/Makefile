@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/02/05 08:17:31 by dvan-hum          #+#    #+#              #
-#    Updated: 2025/02/05 14:01:23 by dvan-hum         ###   ########.fr        #
+#    Created: 2025/02/05 14:05:29 by dvan-hum          #+#    #+#              #
+#    Updated: 2025/02/05 14:05:36 by dvan-hum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = materia
+NAME = bureaucrat
 
 CXX = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -O3
 
-SRC = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
+SRC = main.cpp Bureaucrat.cpp
 OBJ = $(SRC:%.cpp=obj/%.o)
 
 ifndef VERBOSE

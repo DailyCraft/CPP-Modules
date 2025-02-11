@@ -15,8 +15,7 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat: public Animal {
-private:
+class Cat : public Animal {
 	Brain *brain;
 
 public:

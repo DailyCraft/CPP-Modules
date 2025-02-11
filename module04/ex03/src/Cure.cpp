@@ -13,7 +13,7 @@
 #include <iostream>
 #include "Cure.hpp"
 
-Cure::Cure(): AMateria::AMateria("cure") {}
+Cure::Cure(): AMateria("cure") {}
 
 Cure::~Cure() {}
 

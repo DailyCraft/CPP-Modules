@@ -15,7 +15,6 @@
 #include "AForm.hpp"
 
 class PresidentialPardonForm: public AForm {
-private:
 	const std::string target;
 
 public:

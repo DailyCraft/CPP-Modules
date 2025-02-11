@@ -14,7 +14,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(): AForm("Robotomy Request Form", 72, 45), target("") {}
+RobotomyRequestForm::RobotomyRequestForm(): AForm("Robotomy Request Form", 72, 45) {}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target): AForm("Robotomy Request Form", 72, 45), target(target) {}
 
@@ -31,7 +31,7 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
 		throw GradeTooLowException();
 
 	if (!randomSeedSet) {
-		srand(time(0));
+		srand(time(NULL));
 		randomSeedSet = true;
 	}
 	if (rand() % 2 == 0)

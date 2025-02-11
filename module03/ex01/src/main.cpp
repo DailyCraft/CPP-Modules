@@ -16,7 +16,7 @@
 int main() {
 	ScavTrap foo("Foo");
 	ScavTrap bar("Bar");
-	
+
 	foo.attack(bar.getName());
 	bar.takeDamage(foo.getAttackDamage());
 	bar.beRepaired(4);

@@ -14,7 +14,7 @@
 
 MateriaSource::MateriaSource() {
 	for (int i = 0; i < 4; i++)
-		memory[i] = NULL;	
+		memory[i] = NULL;
 }
 
 MateriaSource::MateriaSource(const MateriaSource &source) {

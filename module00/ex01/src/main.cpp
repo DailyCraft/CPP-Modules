@@ -10,13 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iomanip>
 #include <sstream>
 #include <cstdlib>
 #include "PhoneBook.hpp"
 
-std::istream &getline(std::string &str, std::string prompt) {
+std::istream &getline(std::string &str, const std::string &prompt) {
 	do {
 		std::cout << prompt;
 		std::getline(std::cin, str);
@@ -32,7 +30,7 @@ static void add(PhoneBook &book) {
 	std::cout << std::endl;
 }
 
-static void search(PhoneBook &book) {
+static void search(const PhoneBook &book) {
 	std::cout << std::endl;
 	if (!book.displayContacts())
 		return;
@@ -64,7 +62,7 @@ int main() {
 		else if (command == "SEARCH")
 			search(book);
 		else if (command == "EXIT")
-			return (0);
+			return 0;
 		else
 			std::cout << "Unexpected command: " << command << std::endl;
 	}

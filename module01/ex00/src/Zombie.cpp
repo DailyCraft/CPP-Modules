@@ -13,12 +13,12 @@
 #include <iostream>
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name): name(name) {}
+Zombie::Zombie(const std::string &name): name(name) {}
 
 Zombie::~Zombie() {
 	std::cout << "Destructor call of zombie " << name << std::endl;
 }
 
-void Zombie::announce() {
+void Zombie::announce() const {
 	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

@@ -14,8 +14,7 @@
 
 #include "IMateriaSource.hpp"
 
-class MateriaSource: public IMateriaSource {
-private:
+class MateriaSource : public IMateriaSource {
 	AMateria *memory[4];
 
 public:

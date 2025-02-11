@@ -15,7 +15,6 @@
 #include <iostream>
 
 class Bureaucrat {
-private:
 	const std::string name;
 	int grade;
 
@@ -33,12 +32,12 @@ public:
 	void promote();
 	void demote();
 
-	class GradeTooHighException: public std::exception {
+	class GradeTooHighException : public std::exception {
 	public:
 		const char *what() const throw();
 	};
 
-	class GradeTooLowException: public std::exception {
+	class GradeTooLowException : public std::exception {
 		const char *what() const throw();
 	};
 };

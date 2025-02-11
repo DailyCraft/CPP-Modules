@@ -15,14 +15,16 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-template<class T> static AForm *create(const std::string &target) {
+template<class T>
+static AForm *create(const std::string &target) {
 	return new T(target);
 }
 
-AForm *Intern::makeForm(const std::string &name, const std::string &target)
-{
+AForm *Intern::makeForm(const std::string &name, const std::string &target) {
 	std::string names[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-	AForm *(*forms[])(const std::string &) = {create<ShrubberyCreationForm>, create<RobotomyRequestForm>, create<PresidentialPardonForm>};
+	AForm *(*forms[])(const std::string &) = {
+		create<ShrubberyCreationForm>, create<RobotomyRequestForm>, create<PresidentialPardonForm>
+	};
 
 	for (int i = 0; i < 3; i++) {
 		if (names[i] == name) {

@@ -20,15 +20,15 @@ ScavTrap::ScavTrap() {
 	attackDamage = 20;
 }
 
-ScavTrap::ScavTrap(std::string name): ClapTrap(name) {
+ScavTrap::ScavTrap(const std::string &name): ClapTrap(name) {
 	hitPoints = 100;
 	energy = 50;
 	attackDamage = 20;
 	std::cout << "ScavTrap initialized with values: "
-		<< "name: " << name
-		<< ", hit points: " << hitPoints
-		<< ", energy points: " << energy
-		<< ", attack damage: " << attackDamage << std::endl;
+			<< "name: " << name
+			<< ", hit points: " << hitPoints
+			<< ", energy points: " << energy
+			<< ", attack damage: " << attackDamage << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &scavTrap): ClapTrap(scavTrap) {
@@ -54,11 +54,12 @@ void ScavTrap::attack(const std::string &target) {
 	} else if (energy <= 0) {
 		std::cout << "ScavTrap " << name << " doesn't have enough energy to attack" << std::endl;
 	} else {
-		std::cout << "ScavTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
+		std::cout << "ScavTrap " << name << " attacks " << target << ", causing " << attackDamage <<
+				" points of damage!" << std::endl;
 		energy--;
 	}
 }
 
-void ScavTrap::guardGate() {
+void ScavTrap::guardGate() const {
 	std::cout << "ScavTrap " << name << " is now in Gate Keeper mode" << std::endl;
 }

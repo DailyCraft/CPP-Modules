@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
 		if (i > 1)
 			std::cout << ' ';
 		for (size_t j = 0; argv[i][j]; j++)
-			std::cout << (unsigned char) toupper((unsigned char) argv[i][j]);
+			std::cout << static_cast<char>(toupper(argv[i][j]));
 	}
 	if (argc == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";

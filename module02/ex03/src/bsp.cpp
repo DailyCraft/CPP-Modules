@@ -11,15 +11,14 @@
 /* ************************************************************************** */
 
 #include "Point.hpp"
-#include <iostream>
 
-static Fixed compute(const Point u, const Point v, const Point p) {
+static Fixed compute(const Point &u, const Point &v, const Point &p) {
 	float f1 = (v.getX().toFloat() - u.getX().toFloat()) * (p.getY().toFloat() - u.getY().toFloat());
 	float f2 = (v.getY().toFloat() - u.getY().toFloat()) * (p.getX().toFloat() - u.getX().toFloat());
 	return Fixed(f1 - f2);
 }
 
-bool bsp(const Point a, const Point b, const Point c, const Point point) {
+bool bsp(const Point &a, const Point &b, const Point &c, const Point &point) {
 	Fixed ab = compute(a, b, point);
 	Fixed bc = compute(b, c, point);
 	Fixed ca = compute(c, a, point);

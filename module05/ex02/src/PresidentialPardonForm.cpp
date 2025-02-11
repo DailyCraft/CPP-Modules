@@ -13,7 +13,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "Bureaucrat.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(): AForm("Presidential Pardon Form", 25, 5), target("") {}
+PresidentialPardonForm::PresidentialPardonForm(): AForm("Presidential Pardon Form", 25, 5) {}
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target): AForm("Presidential Pardon Form", 25, 5), target(target) {}
 

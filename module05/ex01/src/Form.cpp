@@ -13,9 +13,10 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Form::Form(): name(""), signGrade(150), executeGrade(150), signedForm(false) {}
+Form::Form(): signGrade(150), executeGrade(150), signedForm(false) {}
 
-Form::Form(const std::string &name, int signGrade, int executeGrade): name(name), signGrade(signGrade), executeGrade(executeGrade), signedForm(false) {
+Form::Form(const std::string &name, int signGrade, int executeGrade): name(name), signGrade(signGrade),
+                                                                      executeGrade(executeGrade), signedForm(false) {
 	if (signGrade < 1 || executeGrade < 1)
 		throw GradeTooHighException();
 	if (signGrade > 150 || executeGrade > 150)
@@ -66,8 +67,8 @@ const char *Form::GradeTooLowException::what() const throw() {
 
 std::ostream &operator<<(std::ostream &os, const Form &form) {
 	return os << "Form " << form.getName() << ": ["
-		<< "sign grade: " << form.getSignGrade()
-		<< ", execute grade: " << form.getExecuteGrade()
-		<< ", is signed: " << form.isSigned()
-		<< "]";
+	       << "sign grade: " << form.getSignGrade()
+	       << ", execute grade: " << form.getExecuteGrade()
+	       << ", is signed: " << form.isSigned()
+	       << "]";
 }

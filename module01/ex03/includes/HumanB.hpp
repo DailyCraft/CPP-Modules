@@ -15,12 +15,11 @@
 #include "Weapon.hpp"
 
 class HumanB {
-private:
 	std::string name;
 	Weapon *weapon;
 
 public:
-	HumanB(std::string name);
-	void attack();
+	HumanB(const std::string &name);
+	void attack() const;
 	void setWeapon(Weapon &weapon);
 };

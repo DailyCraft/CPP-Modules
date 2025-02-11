@@ -13,9 +13,9 @@
 #include "HumanB.hpp"
 #include <iostream>
 
-HumanB::HumanB(std::string name): name(name), weapon(NULL) {}
+HumanB::HumanB(const std::string &name): name(name), weapon(NULL) {}
 
-void HumanB::attack() {
+void HumanB::attack() const {
 	if (weapon == NULL)
 		throw std::runtime_error("The weapon pointer is null");
 	std::cout << name << " attacks with their " << weapon->getType() << std::endl;

@@ -12,13 +12,13 @@
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(): name(""), grade(150) {}
+Bureaucrat::Bureaucrat(): grade(150) {}
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade): name(name) {
 	if (grade < 1)
-		throw Bureaucrat::GradeTooHighException();
+		throw GradeTooHighException();
 	if (grade > 150)
-		throw Bureaucrat::GradeTooLowException();
+		throw GradeTooLowException();
 	this->grade = grade;
 }
 
@@ -43,13 +43,13 @@ int Bureaucrat::getGrade() const {
 
 void Bureaucrat::promote() {
 	if (grade == 1)
-		throw Bureaucrat::GradeTooHighException();
+		throw GradeTooHighException();
 	grade--;
 }
 
 void Bureaucrat::demote() {
 	if (grade == 150)
-		throw Bureaucrat::GradeTooLowException();
+		throw GradeTooLowException();
 	grade++;
 }
 

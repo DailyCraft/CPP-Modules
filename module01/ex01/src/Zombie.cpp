@@ -15,16 +15,16 @@
 
 Zombie::Zombie() {}
 
-Zombie::Zombie(std::string name): name(name) {}
+Zombie::Zombie(const std::string &name): name(name) {}
 
 Zombie::~Zombie() {
 	std::cout << "Destructor call of zombie " << name << std::endl;
 }
 
-void Zombie::setName(std::string name) {
+void Zombie::setName(const std::string &name) {
 	this->name = name;
 }
 
-void Zombie::announce() {
+void Zombie::announce() const {
 	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

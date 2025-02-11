@@ -25,6 +25,6 @@ int main() {
 
 	std::cout << std::endl << "--- Random Chump ---" << std::endl;
 	randomChump("Bar");
-	
+
 	std::cout << std::endl;
 }

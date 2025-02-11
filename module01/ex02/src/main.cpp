@@ -16,14 +16,14 @@ int main() {
 	std::string brain = "HI THIS IS BRAIN";
 	std::string *stringPTR = &brain;
 	std::string &stringREF = brain;
-	
+
 	std::cout << "Variable address: " << &brain << std::endl
-		<< "Address hold by ptr: " << stringPTR << std::endl
-		<< "Address hold by ref: " << &stringREF << std::endl;
+			<< "Address hold by ptr: " << stringPTR << std::endl
+			<< "Address hold by ref: " << &stringREF << std::endl;
 
 	std::cout << std::endl;
 
 	std::cout << "Variable value: " << brain << std::endl
-		<< "Value pointed by ptr: " << *stringPTR << std::endl
-		<< "Value pointed by ref: " << stringREF << std::endl;
+			<< "Value pointed by ptr: " << *stringPTR << std::endl
+			<< "Value pointed by ref: " << stringREF << std::endl;
 }

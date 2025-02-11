@@ -13,7 +13,7 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-AForm::AForm(): name(""), signGrade(150), executeGrade(150), signedForm(false) {}
+AForm::AForm(): signGrade(150), executeGrade(150), signedForm(false) {}
 
 AForm::AForm(const std::string &name, int signGrade, int executeGrade): name(name), signGrade(signGrade), executeGrade(executeGrade), signedForm(false) {
 	if (signGrade < 1 || executeGrade < 1)
@@ -70,8 +70,8 @@ const char *AForm::UnsignedFormException::what() const throw() {
 
 std::ostream &operator<<(std::ostream &os, const AForm &form) {
 	return os << "Form " << form.getName() << ": ["
-		<< "sign grade: " << form.getSignGrade()
-		<< ", execute grade: " << form.getExecuteGrade()
-		<< ", is signed: " << form.isSigned()
-		<< "]";
+	       << "sign grade: " << form.getSignGrade()
+	       << ", execute grade: " << form.getExecuteGrade()
+	       << ", is signed: " << form.isSigned()
+	       << "]";
 }

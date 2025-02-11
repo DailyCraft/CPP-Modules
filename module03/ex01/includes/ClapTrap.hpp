@@ -24,14 +24,14 @@ protected:
 public:
 	ClapTrap();
 	ClapTrap(const ClapTrap &clapTrap);
-	ClapTrap(std::string name);
+	ClapTrap(const std::string &name);
 	~ClapTrap();
 
 	std::string getName();
-	int getHitPoints();
-	int getEnergy();
-	int getAttackDamage();
-	void setName(std::string name);
+	int getHitPoints() const;
+	int getEnergy() const;
+	int getAttackDamage() const;
+	void setName(const std::string &name);
 	void setHitPoints(int hitPoints);
 	void setEnergy(int energy);
 	void setAttackDamage(int attackDamage);

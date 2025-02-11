@@ -15,22 +15,21 @@
 #include <iostream>
 
 class Fixed {
-private:
 	int raw;
 	static const int bits = 8;
-	
+
 public:
 	Fixed();
 	Fixed(const Fixed &fixed);
-	Fixed(const int number);
-	Fixed(const float number);
+	Fixed(int number);
+	Fixed(float number);
 	~Fixed();
 
 	float toFloat() const;
 	int toInt() const;
 
 	int getRawBits() const;
-	void setRawBits(const int raw);
+	void setRawBits(int raw);
 
 	Fixed &operator=(const Fixed &fixed);
 };

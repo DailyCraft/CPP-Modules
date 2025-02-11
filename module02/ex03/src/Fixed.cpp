@@ -31,7 +31,7 @@ Fixed::Fixed(const float number) {
 Fixed::~Fixed() {}
 
 float Fixed::toFloat() const {
-	return (float) raw / (1 << bits);
+	return static_cast<float>(raw) / (1 << bits);
 }
 
 int Fixed::toInt() const {
@@ -89,23 +89,23 @@ Fixed Fixed::operator--(int) {
 	return copy;
 }
 
-Fixed Fixed::operator+(const Fixed &fixed) {
+Fixed Fixed::operator+(const Fixed &fixed) const {
 	Fixed result;
 	result.raw = raw + fixed.raw;
 	return fixed;
 }
 
-Fixed Fixed::operator-(const Fixed &fixed) {
+Fixed Fixed::operator-(const Fixed &fixed) const {
 	Fixed result;
 	result.raw = raw - fixed.raw;
 	return fixed;
 }
 
-Fixed Fixed::operator*(const Fixed &fixed) {
+Fixed Fixed::operator*(const Fixed &fixed) const {
 	return Fixed(toFloat() * fixed.toFloat());
 }
 
-Fixed Fixed::operator/(const Fixed &fixed) {
+Fixed Fixed::operator/(const Fixed &fixed) const {
 	if (fixed.raw == 0)
 		throw std::logic_error("Division by zero");
 	return Fixed(toFloat() / fixed.toFloat());

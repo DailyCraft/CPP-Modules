@@ -13,25 +13,26 @@
 #include <iostream>
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(): ClapTrap("_clap_name"), FragTrap() {
+DiamondTrap::DiamondTrap(): ClapTrap("_clap_name") {
 	std::cout << "DiamondTrap initialized with no name" << std::endl;
 	name = "";
 	ScavTrap defaultScav;
 	energy = defaultScav.getEnergy();
 }
 
-DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), FragTrap() {
+DiamondTrap::DiamondTrap(const std::string& name): ClapTrap(name + "_clap_name") {
 	this->name = name;
 	ScavTrap defaultScav;
 	energy = defaultScav.getEnergy();
 	std::cout << "DiamondTrap initialized with values: "
-		<< "name: " << name
-		<< ", hit points: " << hitPoints
-		<< ", energy points: " << energy
-		<< ", attack damage: " << attackDamage << std::endl;
+			<< "name: " << name
+			<< ", hit points: " << hitPoints
+			<< ", energy points: " << energy
+			<< ", attack damage: " << attackDamage << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &diamondTrap): ClapTrap(diamondTrap), ScavTrap(diamondTrap), FragTrap(diamondTrap) {
+DiamondTrap::DiamondTrap(const DiamondTrap &diamondTrap): ClapTrap(diamondTrap), ScavTrap(diamondTrap),
+                                                          FragTrap(diamondTrap) {
 	std::cout << "Copy constructor of DiamondTrap called" << std::endl;
 }
 
@@ -48,6 +49,6 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &diamondTrap) {
 	return *this;
 }
 
-void DiamondTrap::whoAmI() {
+void DiamondTrap::whoAmI() const {
 	std::cout << "The DiamondTrap name is " << name << " and its clap trap name is " << ClapTrap::name << std::endl;
 }

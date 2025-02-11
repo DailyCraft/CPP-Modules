@@ -16,12 +16,11 @@
 #include <iomanip>
 #include "Contact.hpp"
 
-std::istream &getline(std::string &str, std::string prompt);
+std::istream &getline(std::string &str, const std::string &prompt);
 
 class PhoneBook {
-private:
 	Contact contacts[8];
-	unsigned int last;
+	int last;
 
 public:
 	PhoneBook();

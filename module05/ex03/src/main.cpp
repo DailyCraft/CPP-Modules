@@ -12,9 +12,6 @@
 
 #include "Bureaucrat.hpp"
 #include "Intern.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
 
 int main() {
 	Bureaucrat president("President", 1);
@@ -38,5 +35,5 @@ int main() {
 	delete form;
 	std::cout << std::endl;
 
-	form = intern.makeForm("unknown", "...");
+	intern.makeForm("unknown", "...");
 }

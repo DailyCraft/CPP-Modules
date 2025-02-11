@@ -20,15 +20,15 @@ FragTrap::FragTrap() {
 	attackDamage = 30;
 }
 
-FragTrap::FragTrap(std::string name): ClapTrap(name) {
+FragTrap::FragTrap(const std::string &name): ClapTrap(name) {
 	hitPoints = 100;
 	energy = 100;
 	attackDamage = 30;
 	std::cout << "FragTrap initialized with values: "
-		<< "name: " << name
-		<< ", hit points: " << hitPoints
-		<< ", energy points: " << energy
-		<< ", attack damage: " << attackDamage << std::endl;
+			<< "name: " << name
+			<< ", hit points: " << hitPoints
+			<< ", energy points: " << energy
+			<< ", attack damage: " << attackDamage << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &FragTrap): ClapTrap(FragTrap) {
@@ -48,6 +48,6 @@ FragTrap &FragTrap::operator=(const FragTrap &FragTrap) {
 	return *this;
 }
 
-void FragTrap::highFivesGuys() {
+void FragTrap::highFivesGuys() const {
 	std::cout << "FragTrap " << name << ": Who want make an high fives with me?" << std::endl;
 }

@@ -14,7 +14,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(): AForm("robotomy request", 72, 45), target("") {}
+RobotomyRequestForm::RobotomyRequestForm(): AForm("robotomy request", 72, 45) {}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target): AForm("robotomy request", 72, 45), target(target) {}
 

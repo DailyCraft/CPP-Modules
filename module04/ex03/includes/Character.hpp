@@ -14,14 +14,13 @@
 
 #include "ICharacter.hpp"
 
-class Character: public ICharacter {
-private:
+class Character : public ICharacter {
 	std::string name;
 	AMateria *inventory[4];
 
 public:
 	Character();
-	Character(std::string name);
+	Character(const std::string &name);
 	Character(const Character &character);
 	~Character();
 

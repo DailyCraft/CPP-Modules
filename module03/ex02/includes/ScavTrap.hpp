@@ -14,7 +14,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap {
+class ScavTrap : public ClapTrap {
 public:
 	ScavTrap();
 	ScavTrap(const ScavTrap &scavTrap);
@@ -23,6 +23,6 @@ public:
 
 	ScavTrap &operator=(const ScavTrap &scavTrap);
 
-	void attack(const std::string &target);	
-	void guardGate();
+	void attack(const std::string &target);
+	void guardGate() const;
 };

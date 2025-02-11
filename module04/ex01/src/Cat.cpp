@@ -12,13 +12,13 @@
 
 #include "Cat.hpp"
 
-Cat::Cat(): Animal() {
+Cat::Cat() {
 	std::cout << "Cat constructor call" << std::endl;
 	type = "Cat";
 	brain = new Brain();
 }
 
-Cat::Cat(const Cat &cat) {
+Cat::Cat(const Cat &cat): Animal(cat) {
 	std::cout << "Cat copy constructor call" << std::endl;
 	*this = cat;
 }

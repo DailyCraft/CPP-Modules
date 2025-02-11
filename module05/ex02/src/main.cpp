@@ -29,7 +29,7 @@ int main() {
 	foo.signForm(robotomy);
 	foo.signForm(presidential);
 	std::cout << std::endl;
-	
+
 	foo.executeForm(shrubbery);
 	foo.executeForm(robotomy);
 	foo.executeForm(presidential);
@@ -40,8 +40,7 @@ int main() {
 	president.executeForm(robotomy);
 	president.executeForm(presidential);
 	std::cout << std::endl;
-	
+
 	for (int i = 0; i < 10; i++)
 		robotomy.execute(president);
-	
 }

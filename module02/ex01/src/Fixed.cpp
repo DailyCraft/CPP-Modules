@@ -38,7 +38,7 @@ Fixed::~Fixed() {
 }
 
 float Fixed::toFloat() const {
-	return (float) raw / (1 << bits);
+	return static_cast<float>(raw) / (1 << bits);
 }
 
 int Fixed::toInt() const {

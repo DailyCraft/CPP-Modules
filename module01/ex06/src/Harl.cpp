@@ -41,7 +41,7 @@ void Harl::error() {
 		<< std::endl;
 }
 
-void Harl::complain(std::string level) {
+void Harl::complain(const std::string &level) {
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	int filter = -1;
 
@@ -56,10 +56,13 @@ void Harl::complain(std::string level) {
 	{
 	case 0:
 		debug();
+		// Fall through
 	case 1:
 		info();
+		// Fall through
 	case 2:
 		warning();
+		// Fall through
 	case 3:
 		error();
 		break;

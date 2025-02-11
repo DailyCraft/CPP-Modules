@@ -29,7 +29,7 @@ Brain::~Brain() {
 }
 
 Brain &Brain::operator=(const Brain &brain) {
-	std::cout << "Brain assignement operator call" << std::endl;
+	std::cout << "Brain assignment operator call" << std::endl;
 	for (int i = 0; i < 100; i++)
 		ideas[i] = brain.ideas[i];
 	return *this;

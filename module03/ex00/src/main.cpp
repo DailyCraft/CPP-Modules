@@ -16,7 +16,7 @@
 int main() {
 	ClapTrap foo("Foo");
 	ClapTrap bar("Bar");
-	
+
 	foo.attack(bar.getName());
 	bar.takeDamage(foo.getAttackDamage());
 	bar.beRepaired(4);

@@ -13,9 +13,9 @@
 #include <iostream>
 #include <fstream>
 
-static void replace(std::ifstream &input, std::ofstream &output, char *toReplace, char *replace) {
+static void replace(std::ifstream &input, std::ofstream &output, char *toReplace, const char *replace) {
 	std::string line;
-	
+
 	while (getline(input, line)) {
 		while (true) {
 			size_t index = line.find(toReplace);
@@ -37,7 +37,7 @@ int main(int argc, char **argv) {
 		std::cerr << argv[0] << " <filename> <to_replace> <replace>" << std::endl;
 		return 1;
 	}
-	
+
 	std::ifstream input(argv[1]);
 	if (!input) {
 		std::cerr << "Failed to open " << argv[1] << std::endl;
@@ -52,4 +52,5 @@ int main(int argc, char **argv) {
 	}
 
 	replace(input, output, argv[2], argv[3]);
+	return 0;
 }

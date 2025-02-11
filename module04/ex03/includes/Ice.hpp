@@ -15,7 +15,7 @@
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 
-class Ice: public AMateria {
+class Ice : public AMateria {
 public:
 	Ice();
 	~Ice();

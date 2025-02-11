@@ -13,7 +13,7 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): name(""), hitPoints(10), energy(10), attackDamage(0) {
+ClapTrap::ClapTrap(): hitPoints(10), energy(10), attackDamage(0) {
 	std::cout << "ClapTrap initialized with no name" << std::endl;
 }
 
@@ -22,20 +22,20 @@ ClapTrap::ClapTrap(const ClapTrap &clapTrap) {
 	*this = clapTrap;
 }
 
-ClapTrap::ClapTrap(std::string name): name(name), hitPoints(10), energy(10), attackDamage(0) {
+ClapTrap::ClapTrap(const std::string &name): name(name), hitPoints(10), energy(10), attackDamage(0) {
 	std::cout << "ClapTrap initialized with values: "
-		<< "name: " << name
-		<< ", hit points: " << hitPoints
-		<< ", energy points: " << energy
-		<< ", attack damage: " << attackDamage << std::endl;
+			<< "name: " << name
+			<< ", hit points: " << hitPoints
+			<< ", energy points: " << energy
+			<< ", attack damage: " << attackDamage << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
 	std::cout << "Destructor of ClapTrap " << name << " called, final values: "
-		<< "name: " << name
-		<< ", hit points: " << hitPoints
-		<< ", energy points: " << energy
-		<< ", attack damage: " << attackDamage << std::endl;
+			<< "name: " << name
+			<< ", hit points: " << hitPoints
+			<< ", energy points: " << energy
+			<< ", attack damage: " << attackDamage << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &clapTrap) {
@@ -83,19 +83,19 @@ std::string ClapTrap::getName() {
 	return name;
 }
 
-int ClapTrap::getHitPoints() {
+int ClapTrap::getHitPoints() const {
 	return hitPoints;
 }
 
-int ClapTrap::getEnergy() {
+int ClapTrap::getEnergy() const {
 	return energy;
 }
 
-int ClapTrap::getAttackDamage() {
+int ClapTrap::getAttackDamage() const {
 	return attackDamage;
 }
 
-void ClapTrap::setName(std::string name) {
+void ClapTrap::setName(const std::string &name) {
 	this->name = name;
 }
 

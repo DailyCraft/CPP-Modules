@@ -21,13 +21,13 @@ int main() {
 		dog->getBrain()->getIdea(0) = "Do I love meat?";
 		animals[i] = dog;
 	}
-	
+
 	for (int i = 25; i < 50; i++)
 		animals[i] = new Cat();
 
 	for (int i = 0; i < 5; i++) {
 		std::cout << std::endl;
-		Dog *dog = static_cast<Dog *>(animals[i]);
+		Dog *dog = dynamic_cast<Dog *>(animals[i]);
 		Dog copy(*dog);
 		std::cout << "Idea: " << copy.getBrain()->getIdea(0) << std::endl;
 		dog->getBrain()->getIdea(0) = "I love meat!";

@@ -15,18 +15,18 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-class DiamondTrap: public ScavTrap, public FragTrap {
+class DiamondTrap : public ScavTrap, public FragTrap {
 private:
 	std::string name;
 
 public:
 	DiamondTrap();
 	DiamondTrap(const DiamondTrap &scavTrap);
-	DiamondTrap(std::string name);
+	DiamondTrap(const std::string &name);
 	~DiamondTrap();
 
 	DiamondTrap &operator=(const DiamondTrap &scavTrap);
 
 	using ScavTrap::attack;
-	void whoAmI();
+	void whoAmI() const;
 };

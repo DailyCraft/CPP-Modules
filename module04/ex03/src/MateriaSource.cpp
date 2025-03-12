@@ -6,7 +6,7 @@
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 09:14:55 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/02/05 12:47:15 by dvan-hum         ###   ########.fr       */
+/*   Updated: 2025/02/12 08:13:10 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,23 @@ MateriaSource::MateriaSource() {
 }
 
 MateriaSource::MateriaSource(const MateriaSource &source) {
+	*this = source;
+}
+
+MateriaSource::~MateriaSource() {
+	for (int i = 0; i < 4 && memory[i] != NULL; i++)
+		delete memory[i];
+}
+
+MateriaSource &MateriaSource::operator=(const MateriaSource &source) {
 	for (int i = 0; i < 4; i++) {
 		if (source.memory[i] != NULL)
 			memory[i] = source.memory[i]->clone();
 		else
 			memory[i] = NULL;
 	}
-}
 
-MateriaSource::~MateriaSource() {
-	for (int i = 0; i < 4 && memory[i] != NULL; i++)
-		delete memory[i];
+	return *this;
 }
 
 void MateriaSource::learnMateria(AMateria *materia) {

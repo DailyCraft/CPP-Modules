@@ -6,7 +6,7 @@
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 14:35:22 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/02/07 09:37:30 by dvan-hum         ###   ########.fr       */
+/*   Updated: 2025/03/10 15:46:18 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void test(int grade, void (Bureaucrat::*changeGrade)()) {
 
 		(b.*changeGrade)();
 	} catch (std::exception &e) {
-		std::cout << "Exception thrown. Raison: " << e.what() << std::endl;
+		std::cout << "Exception thrown. Reason: " << e.what() << std::endl;
 	}
 }
 

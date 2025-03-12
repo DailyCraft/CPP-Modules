@@ -1,28 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 08:21:39 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/02/12 08:13:45 by dvan-hum         ###   ########.fr       */
+/*   Created: 2025/03/12 09:56:43 by dvan-hum          #+#    #+#             */
+/*   Updated: 2025/03/12 10:42:18 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "AMateria.hpp"
-#include "ICharacter.hpp"
+#include "Base.hpp"
 
-class Ice : public AMateria {
-public:
-	Ice();
-	Ice(const Ice &ice);
-	~Ice();
-
-	using AMateria::operator=;
-
-	AMateria *clone() const;
-	void use(ICharacter &target);
-};
+class B : public Base {};

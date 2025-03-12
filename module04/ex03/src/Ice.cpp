@@ -6,7 +6,7 @@
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 08:54:39 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/02/05 11:56:11 by dvan-hum         ###   ########.fr       */
+/*   Updated: 2025/02/12 08:14:07 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "Ice.hpp"
 
 Ice::Ice(): AMateria("ice") {}
+
+Ice::Ice(const Ice &ice): AMateria(ice) {}
 
 Ice::~Ice() {}
 

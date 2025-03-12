@@ -6,7 +6,7 @@
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 08:30:11 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/02/07 09:28:32 by dvan-hum         ###   ########.fr       */
+/*   Updated: 2025/03/12 10:48:58 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ public:
 	};
 
 	class GradeTooLowException : public std::exception {
+	public:
 		const char *what() const throw();
 	};
 };

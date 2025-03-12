@@ -6,7 +6,7 @@
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 08:24:11 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/02/05 13:38:32 by dvan-hum         ###   ########.fr       */
+/*   Updated: 2025/02/12 08:02:50 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int main() {
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 
-	Character me_character("me");
-	ICharacter &me = me_character;
+	Character meCharacter("me");
+	ICharacter &me = meCharacter;
 
 	me.equip(src->createMateria("ice"));
 	me.equip(src->createMateria("cure"));
@@ -38,7 +38,7 @@ int main() {
 
 	me.unequip(2);
 
-	me_character = Character("me");
+	meCharacter = Character("me");
 
 	delete bob;
 	delete src;

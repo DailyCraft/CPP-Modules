@@ -6,7 +6,7 @@
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 08:53:09 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/02/05 11:53:57 by dvan-hum         ###   ########.fr       */
+/*   Updated: 2025/02/12 08:12:25 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "Cure.hpp"
 
 Cure::Cure(): AMateria("cure") {}
+
+Cure::Cure(const Cure &cure): AMateria(cure) {}
 
 Cure::~Cure() {}
 

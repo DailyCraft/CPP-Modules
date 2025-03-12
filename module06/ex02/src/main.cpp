@@ -6,7 +6,7 @@
 /*   By: dvan-hum <dvan-hum@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 09:57:22 by dvan-hum          #+#    #+#             */
-/*   Updated: 2025/03/12 11:01:18 by dvan-hum         ###   ########.fr       */
+/*   Updated: 2025/03/12 11:14:05 by dvan-hum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,12 @@ void identify(Base& base) {
 }
 
 int main() {
-	srand(time(0));
-	Base* base = generate();
-	identify(base);
-	identify(*base);
-	delete base;
+	srand(time(NULL));
+	for (int i = 0; i < 10; i++) {
+		Base* base = generate();
+		identify(base);
+		identify(*base);
+		delete base;
+		std::cout << std::endl;
+	}
 }
